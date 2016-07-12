@@ -1,0 +1,17 @@
+<h1>@Model.name</h1>
+<ul>
+@foreach(var d in Model.GetDoctors())
+{
+  <li><a href="/@Model.id/doctors/@d.id">@d.name</a></li>
+}
+</ul>
+<hr>
+<h3>New Doctor</h3>
+<form action="/doctors/new" method="post">
+  <label for="name">Enter the doctor's name:</label>
+  <input type="text" name="name" value="">
+  <input type="text" name="spec" value="@Model.id" hidden="hidden">
+  <button type="submit">Add</button>
+</form>
+<hr>
+<a href="/">Home</a>

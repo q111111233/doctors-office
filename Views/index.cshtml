@@ -1,0 +1,7 @@
+<h1>Doctr's Office</h1>
+<ul>
+@foreach(var s in Model)
+{
+  <li><a href="/specialties/@s.id">@s.name</a></li>
+}
+</ul>

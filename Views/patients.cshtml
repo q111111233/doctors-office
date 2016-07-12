@@ -1,0 +1,19 @@
+<h1>@Model.name</h1>
+<h3>you have @Model.CountPatients() patients!</h3>
+<ul>
+@foreach(var p in Model.GetPatients())
+{
+  <li>@p.name</li>
+}
+</ul>
+<hr>
+<h3>New Patient</h3>
+<form action="/patients/new" method="post">
+  <label for="name">Enter the patient's name:</label>
+  <input type="text" name="name" value="">
+  <input type="text" name="doc" value="@Model.id" hidden="hidden">
+  <input type="text" name="spec" value="@Model.specialty.id" hidden="hidden">
+  <button type="submit">Add</button>
+</form>
+<hr>
+<a href="/specialties/@Model.specialty.id">Back to @Model.specialty.name</a>
